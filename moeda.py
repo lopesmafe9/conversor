@@ -7,11 +7,4 @@ taxas = {
     ("EUR", "USD"): 1.17
 }
 
-def converter_moeda (valor, de, para){
-    if de == para:
-        return valor
-    if (de, para) in taxas:
-        return valor * taxas [(de, para)]
-    else:
-        return None
-}
+def converter_moeda (valor, de, para):
