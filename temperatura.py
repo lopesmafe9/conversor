@@ -11,7 +11,7 @@ def converter_temperatura (valor, de, para):
 
 #converte de kelvin para o destino
 if para == "C":
-    return valor_k - 274.15
+    return (valor_k - 274.15)
 elif para == "F":
     return (valor_k - 273.15) * 9/5 + 32
 elif para == "K":
