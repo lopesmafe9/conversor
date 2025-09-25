@@ -6,4 +6,4 @@ def converter_comprimento(valor, de, para):
         return None
 
     valor_metros = valor * fatores[de]
-    return valor valor_metros/fatores[para]
+    return valor_metros/fatores[para]
