@@ -19,10 +19,27 @@ def menu():
         opcao = input("escolha uma opção: ")
 
         if opcao == "1":
-            valor = float(input("digite o valor: "))
-            de = input("de (C/F/K): ").upper()
-            para = input("para (C/F/K): ").upper()
+            while True:
+                try:
+                    valor = float(input("Digite o valor: "))
+                    break
+                except ValueError:
+                    print("Valor inválido! Digite um número.")
+
+            while True:
+                de = input("de (C/F/K): ").upper()
+                if de in ["C", "F", "K"]:
+                    break
+                print("Unidade inválida! Digite C, F ou K.")
+
+            while True:
+                para = input("para (C/F/K): ").upper()
+                if para in ["C", "F", "K"]:
+                    break
+                print("Unidade inválida! Digite C, F ou K.")
+
             resultado = converter_temperatura(valor, de, para)
+
             if resultado is not None:
                 conversao = f"{valor} {de} = {resultado:.2f} {para}"
                 print(conversao)
@@ -30,7 +47,7 @@ def menu():
                 time.sleep(5)
                 os.system('cls')
             else:
-                print("conversão inválida!")
+                print("Conversão inválida!")
 
         elif opcao == "2":
             valor = float(input("digite o valor: "))
