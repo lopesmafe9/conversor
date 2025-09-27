@@ -17,8 +17,10 @@ def menu():
         print("0. sair")
 
         opcao = input("escolha uma opção: ")
+        os.system("cls")
 
         if opcao == "1":
+            print("*.*.* Converter Temperatura*.*.* \n")
             while True:
                 try:
                     valor = float(input("Digite o valor: "))
