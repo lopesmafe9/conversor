@@ -50,9 +50,24 @@ def menu():
                 print("Conversão inválida!")
 
         elif opcao == "2":
-            valor = float(input("digite o valor: "))
-            de = input("de (BRL/USD/EUR): ").upper()
-            para = input("para (BRL/USD/EUR): ").upper()
+            while True:
+                try:
+                    valor = float(input("digite o valor: "))
+                    break
+                except ValueError:
+                    print("Valor inválido! Digite um número.")
+            while True:
+                de = input("de (BRL/USD/EUR): ").upper()
+                if de in ["BRL", "USD", "EUR"]:
+                    break
+                print("Unidade inválida! Digite BRL, USD ou EUR.")
+            
+            while True:
+                para = input("para (BRL/USD/EUR): ").upper()
+                if para in ["BRL", "USD", "EUR"]:
+                    break
+                print("Unidade inválida! Digite BRL, USD ou EUR.")
+                
             resultado = converter_moeda(valor, de, para)
             if resultado is not None:
                 conversao = f"{valor} {de} = {resultado:.2f} {para}"
