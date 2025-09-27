@@ -43,6 +43,7 @@ def menu():
             resultado = converter_temperatura(valor, de, para)
 
             if resultado is not None:
+                print("\nResultado: ")
                 conversao = f"{valor} {de} = {resultado:.2f} {para}"
                 print(conversao)
                 historico.append(conversao)
@@ -52,6 +53,7 @@ def menu():
                 print("Conversão inválida!")
 
         elif opcao == "2":
+            print("*.*.* Converter Moeda*.*.* \n")
             while True:
                 try:
                     valor = float(input("digite o valor: "))
