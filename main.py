@@ -79,10 +79,27 @@ def menu():
                 print("conversão inválida!")
         
         elif opcao == "3":
-            valor = float(input("digite o valor: "))
-            de = input("de (m/cm/km): ").lower()
-            para = input("para (m/cm/km): ").lower()
+            while True:
+                try:
+                    valor = float(input("digite o valor: "))
+                    break
+                except ValueError:
+                    print("Valor inválido! Digite um número.")
+            
+            while True:
+                de = input("de (m/cm/km): ").lower()
+                if de in ["m", "cm", "km"]:
+                    break
+                print("Unidade inválida! Digite m, cm ou km.")
+                
+            while True:
+                para = input("para (m/cm/km): ").lower()
+                if para in ["m", "cm", "km"]:
+                    break
+                print("Unidade inválida! Digite m, cm ou km.")
+                
             resultado = converter_comprimento(valor, de, para)
+            
             if resultado is not None:
                 conversao = f"{valor} {de} = {resultado:.2f} {para}"
                 print(conversao)
@@ -93,18 +110,19 @@ def menu():
                 print("conversão inválida!")
         
         elif opcao == '4':
-            valor = float(input("digite o valor: "))
-            de = input("de (g/kg/mg): ").lower()
-            para = input("para (g/kg/mg): ").lower()
-            resultado = converter_peso(valor, de, para)
-            if resultado is not None:
-                conversao = f"{valor} {de} = {resultado:.8f} {para}"
-                print(conversao)
-                historico.append(conversao)
-                time.sleep(5)
-                os.system('cls')
-            else:
-                print("Conversão inválida!")
+            while True: 
+                valor = float(input("digite o valor: "))
+                de = input("de (g/kg/mg): ").lower()
+                para = input("para (g/kg/mg): ").lower()
+                resultado = converter_peso(valor, de, para)
+                if resultado is not None:
+                    conversao = f"{valor} {de} = {resultado:.8f} {para}"
+                    print(conversao)
+                    historico.append(conversao)
+                    time.sleep(5)
+                    os.system('cls')
+                else:
+                    print("Conversão inválida!")
             
         elif opcao == '5':
             os.system('cls')
