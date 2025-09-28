@@ -84,6 +84,7 @@ def menu():
                 print("conversão inválida!")
         
         elif opcao == "3":
+            print("*.*.* Converter Comprimento*.*.* \n")
             while True:
                 try:
                     valor = float(input("digite o valor: "))
@@ -106,6 +107,7 @@ def menu():
             resultado = converter_comprimento(valor, de, para)
             
             if resultado is not None:
+                print("\nResultado: ")
                 conversao = f"{valor} {de} = {resultado:.2f} {para}"
                 print(conversao)
                 historico.append(conversao)
