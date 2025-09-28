@@ -50,3 +50,14 @@ Contribuições só são aceitas com autorização da autora.
 4. Push para a branch (git push origin minha-feature)
 5. Abra um Pull Request
 
+## 🏗️ Qualidade da aplicação
+Este projeto foi desenvolvido levando em consideração princípios de qualidade de software definidos pela **ISO/IEC 25010**, que estabelece um modelo de qualidade em oito características principais:
+
+1. **Funcionalidade** – O conversor executa corretamente as conversões propostas (temperatura, moeda, comprimento e peso).  
+2. **Confiabilidade** – Entradas inválidas são tratadas com validação, evitando falhas e comportamentos inesperados.  
+3. **Usabilidade** – Interface simples em linha de comando, com mensagens claras ao usuário.  
+4. **Eficiência de desempenho** – Processamento leve, executado rapidamente em qualquer máquina com Python 3.  
+5. **Manutenibilidade** – Código modular e comentado, facilitando futuras melhorias e correções.  
+6. **Portabilidade** – Compatível com diferentes sistemas operacionais (Windows, Linux, macOS) que suportem Python.  
+7. **Segurança** – Entradas de usuário são validadas, reduzindo riscos de erros de execução.  
+8. **Compatibilidade** – Pode ser facilmente expandido ou integrado a outros módulos/projetos. 
