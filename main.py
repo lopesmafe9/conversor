@@ -74,6 +74,7 @@ def menu():
                 
             resultado = converter_moeda(valor, de, para)
             if resultado is not None:
+                print("\nResultado: ")
                 conversao = f"{valor} {de} = {resultado:.2f} {para}"
                 print(conversao)
                 historico.append(conversao)
