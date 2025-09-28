@@ -116,22 +116,37 @@ def menu():
             else:
                 print("conversão inválida!")
         
-        elif opcao == '4':
+        if opcao == "4":
             print("*.*.* Converter Peso*.*.* \n")
-            while True: 
-                valor = float(input("digite o valor: "))
+            while True:
+                try:
+                    valor = float(input("Digite o valor: "))
+                    break
+                except ValueError:
+                    print("Valor inválido! Digite um número.")
+                    
+            while True:
                 de = input("de (g/kg/mg): ").lower()
+                if de in ["g", "kg", "mg"]:
+                    break
+                print("Unidade inválida! Digite g, mg ou kg.")
+                
+            while True:
                 para = input("para (g/kg/mg): ").lower()
-                resultado = converter_peso(valor, de, para)
-                if resultado is not None:
-                    print("\nResultado:")
-                    conversao = f"{valor} {de} = {resultado:.8f} {para}"
-                    print(conversao)
-                    historico.append(conversao)
-                    time.sleep(5)
-                    os.system('cls')
-                else:
-                    print("Conversão inválida!")
+                if para in ["g", "mg", "kg"]:
+                    break
+                print("Unidade inválida! Digite g, mg ou kg.")
+                
+            resultado = converter_peso(valor, de, para)
+            if resultado is not None:
+                print("\nResultado:")
+                conversao = f"{valor} {de} = {resultado:.8f} {para}"
+                print(conversao)
+                historico.append(conversao)
+                time.sleep(5)
+                os.system('cls')
+            else:
+                print("Conversão inválida!")
             
         elif opcao == '5':
             os.system('cls')
