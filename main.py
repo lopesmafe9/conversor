@@ -123,6 +123,7 @@ def menu():
                 para = input("para (g/kg/mg): ").lower()
                 resultado = converter_peso(valor, de, para)
                 if resultado is not None:
+                    print("\nResultado:")
                     conversao = f"{valor} {de} = {resultado:.8f} {para}"
                     print(conversao)
                     historico.append(conversao)
