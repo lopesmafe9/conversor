@@ -117,6 +117,7 @@ def menu():
                 print("conversão inválida!")
         
         elif opcao == '4':
+            print("*.*.* Converter Peso*.*.* \n")
             while True: 
                 valor = float(input("digite o valor: "))
                 de = input("de (g/kg/mg): ").lower()
