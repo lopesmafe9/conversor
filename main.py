@@ -116,7 +116,7 @@ def menu():
             else:
                 print("conversão inválida!")
         
-        if opcao == "4":
+        elif opcao == "4":
             print("*.*.* Converter Peso*.*.* \n")
             while True:
                 try:
